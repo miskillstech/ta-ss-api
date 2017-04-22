@@ -1,2 +1,0 @@
-# ta-ss-api
-Bambhole
