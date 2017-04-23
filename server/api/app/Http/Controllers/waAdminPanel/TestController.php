@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ptFrontend;
+namespace App\Http\Controllers\waAdminPanel;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

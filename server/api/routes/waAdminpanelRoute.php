@@ -14,4 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('testPatients','ptFrontend\TestController@testPatients');
+Route::get('testPatients','waAdminPanel\TestController@testPatients');
+//wa-admin/testPatients

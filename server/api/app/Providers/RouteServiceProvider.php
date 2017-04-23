@@ -38,7 +38,10 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
-        $this->prFrontendRoutes();
+        $this->waPtFrontendRoutes();
+        $this->waAdminpanelRoute();
+        $this->waDrFrontendRoute();
+        $this->maPtFrontendRoute();
 
         //
     }
@@ -77,14 +80,44 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
-    protected function prFrontendRoutes()
+    protected function waPtFrontendRoutes()
     {
         Route::group([
             'middleware' => 'api',
             'namespace' => $this->namespace,
-            'prefix' => 'pt-forntend',
+            'prefix' => 'wa-pt-frontend',
         ], function ($router) {
-            require base_path('routes/prFrontendRoute.php');
+            require base_path('routes/waPtFrontendRoute.php');
+        });
+    }
+    protected function waAdminpanelRoute()
+    {
+        Route::group([
+            'middleware' => 'api',
+            'namespace' => $this->namespace,
+            'prefix' => 'wa-admin',
+        ], function ($router) {
+            require base_path('routes/waAdminpanelRoute.php');
+        });
+    }
+    protected function maPtFrontendRoute()
+    {
+        Route::group([
+            'middleware' => 'api',
+            'namespace' => $this->namespace,
+            'prefix' => 'ma-pt-frontend',
+        ], function ($router) {
+            require base_path('routes/maPtFrontendRoute.php');
+        });
+    }
+    protected function waDrFrontendRoute()
+    {
+        Route::group([
+            'middleware' => 'api',
+            'namespace' => $this->namespace,
+            'prefix' => 'wa-dr-frontend',
+        ], function ($router) {
+            require base_path('routes/waDrFrontendRoute.php');
         });
     }
     
