@@ -38,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+        $this->prFrontendRoutes();
 
         //
     }
@@ -76,4 +77,15 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+    protected function prFrontendRoutes()
+    {
+        Route::group([
+            'middleware' => 'api',
+            'namespace' => $this->namespace,
+            'prefix' => 'pt-forntend',
+        ], function ($router) {
+            require base_path('routes/prFrontendRoute.php');
+        });
+    }
+    
 }
