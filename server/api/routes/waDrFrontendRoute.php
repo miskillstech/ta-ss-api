@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('testPatients','waDrFrontend\TestController@testPatients');
+//wa-dr-frontend/testPatients
